@@ -2,6 +2,56 @@
    Smiling Viking Plumbing — Scripts
    ======================================== */
 
+// Lightbox
+let currentLightboxIndex = 0;
+const galleryItems = () => document.querySelectorAll('.gallery-item');
+
+function openLightbox(el) {
+    const items = galleryItems();
+    currentLightboxIndex = Array.from(items).indexOf(el);
+    const img = el.querySelector('img');
+    const caption = el.querySelector('.gallery-caption');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    // For Google images, request full resolution by replacing =w800 with =w1600
+    let src = img.src.replace('=w800', '=w1600');
+    lightboxImg.src = src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = caption ? caption.textContent : '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+    if (e.target.classList.contains('lightbox') || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function navigateLightbox(dir, e) {
+    e.stopPropagation();
+    const items = galleryItems();
+    currentLightboxIndex = (currentLightboxIndex + dir + items.length) % items.length;
+    const item = items[currentLightboxIndex];
+    const img = item.querySelector('img');
+    const caption = item.querySelector('.gallery-caption');
+    let src = img.src.replace('=w800', '=w1600');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox-caption').textContent = caption ? caption.textContent : '';
+}
+
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') navigateLightbox(-1, e);
+    if (e.key === 'ArrowRight') navigateLightbox(1, e);
+});
+
 // Sticky header shadow on scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {

@@ -163,38 +163,47 @@
                 <p>Real photos from real jobs — residential repiping, water heater installs, commercial kitchen plumbing, and more.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item gallery-large">
+                <div class="gallery-item gallery-large" onclick="openLightbox(this)">
                     <img src="https://s3-media0.fl.yelpcdn.com/bphoto/3NfUWTzCEqndHKu2VD-4Iw/o.jpg" alt="The Smiling Viking Plumbing team" loading="lazy">
                     <div class="gallery-caption">The Smiling Vikings team</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/TF877kgq0jASoS3IRzt14g/o.jpg" alt="Navien tankless water heater installation" loading="lazy">
-                    <div class="gallery-caption">Navien tankless water heater install</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9pveCpatCg4qLRg0TrtRqQJL7iO8CUkRC2qn2v-sembGABHgkqhPhED80qGRMGT_ASTpxsQ_yKHzj6jnt3UjwLSvJh95PjwT5gSIe88OxOP_qK9BByVCswEdmwgeyJcq1sSd6wXgfRismOnq=w800" alt="Copper water line installation" loading="lazy">
+                    <div class="gallery-caption">New copper water line install</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/SukvmpwNU9_NssO7LZvXwQ/o.jpg" alt="Residential water lines repiping" loading="lazy">
-                    <div class="gallery-caption">Residential water line repipe</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9pvHvl0-dsdHVDxT_e3PyT3N83DTMZnYC8psD94470pXd2H08sZ_l-KRLI-PRAY4b-rSBwpCshlqzbAn3wKfoSy_TFaJHSnrqAsS9BGVhRhJny-1CkZ0_flG_iiwx682V_oHcIs8MupAajU=w800" alt="Repiping project in progress" loading="lazy">
+                    <div class="gallery-caption">Whole-home repipe in progress</div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://s3-media0.fl.yelpcdn.com/bphoto/OUp_Nasy8-LJiSMWxnKnxQ/o.jpg" alt="Commercial kitchen plumbing finished product" loading="lazy">
                     <div class="gallery-caption">Commercial kitchen — finished</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/XVx0D3G9290kr6Fg98rHNQ/o.jpg" alt="New natural gas and water service lines" loading="lazy">
-                    <div class="gallery-caption">New gas &amp; water service lines</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9pvWnz7OSPTBQD6KdPs027ElLqvz2nx6X3xtJaukfkkY9Gr_vl8kCGshs_KrSfhYJLH4ptFuTf-cDPTadG4SENhMLkOzXgpcVlW37utfU8_gBUoObVHxSAmK2YyE-fJWAgRl4uUUvtKCb_OY=w800" alt="Careful landscape excavation for pipe replacement" loading="lazy">
+                    <div class="gallery-caption">Careful landscape excavation</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/wicBacpswjkL6nh3ypiOYg/o.jpg" alt="Precision wall opening for pipe replacement" loading="lazy">
-                    <div class="gallery-caption">Precision diagnosis &amp; pipe replacement</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/TF877kgq0jASoS3IRzt14g/o.jpg" alt="Navien tankless water heater installation" loading="lazy">
+                    <div class="gallery-caption">Navien tankless water heater install</div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9ptn6d05WVzYdXzfs8anP0h20Qqa8qvOspFfG43ctSwhp4dvhU_30lh_rGD1odClUFw8ToKBiXexSCJ-d_FmZGxu2DgpxUDIstvKPYQFJqMTRhgj1c3_pIaiNeC1ucL0v7BrqipWgg_SbVXq=w800" alt="Sprinkler system protection during pipe work" loading="lazy">
+                    <div class="gallery-caption">Protecting sprinklers during pipe work</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
                     <img src="https://s3-media0.fl.yelpcdn.com/bphoto/Eq7o0N2yqf3jl04Ds8rgvA/o.jpg" alt="Angelo working on sewage pump — smiling!" loading="lazy">
                     <div class="gallery-caption">Angelo on a sewage pump — smiling!</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/JYdwsKKuGuIpGFrIZkj4yw/o.jpg" alt="Careful excavation protecting landscaping" loading="lazy">
-                    <div class="gallery-caption">Careful excavation, plants protected</div>
-                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+                <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+                <button class="lightbox-prev" onclick="navigateLightbox(-1, event)">&#8249;</button>
+                <img class="lightbox-img" id="lightbox-img" src="" alt="">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+                <button class="lightbox-next" onclick="navigateLightbox(1, event)">&#8250;</button>
             </div>
             <div class="gallery-cta">
                 <a href="https://www.yelp.com/biz_photos/smiling-viking-plumbing-south-san-francisco" target="_blank" rel="noopener" class="btn btn-outline">See All 19 Photos on Yelp</a>
@@ -433,7 +442,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/3NfUWTzCEqndHKu2VD-4Iw/o.jpg" alt="The Smiling Viking Plumbing team" class="about-team-photo" loading="lazy">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerXtPzGUksq2ExdoEiR54TiYGXrK908mU0WD6Er8pEdJEAOIxkEzqsIEMqjwdZbH0IknoNu6oT85bg2nqiUhhFoijhuBBQRP5b_Ss_PMLddYtZT88z7lXMWv-zOvxd8SHViLH4D0rEv1ae1=w800" alt="The Smiling Viking Plumbing team" class="about-team-photo" loading="lazy">
                 </div>
             </div>
         </div>
