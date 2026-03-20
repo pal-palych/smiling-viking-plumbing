@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.legatoplumbing.com)",
+      "Bash(file:*)",
+      "Bash(mdls \"/Users/pasha/Downloads/Smiling Viking Plumbing/IMG_9148.PNG\")",
+      "Bash(open:*)",
+      "Bash(ls:*)",
+      "Bash(npx --version)",
+      "Bash(npx surge:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(cd:*)"
+    ]
+  }
+}
